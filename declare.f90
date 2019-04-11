@@ -113,6 +113,11 @@ real*8 :: phiSLAdagalpha, phiSLAdagbeta
 real*8 :: phiLAdagalpha, phiLAdagbeta
 real*8 :: psiLAdagalpha, psiLAdagbeta
 
+!!!Gabriel Breuil 11-04-2019
+real*8 :: phiSLAnewdag,phiLAnewdag,psiLAnewdag,zcoef
+!!!End Gabriel Breuil 11-04-2019
+
+
 ! Numerical Integration
 
 character*128 :: file1,file2
