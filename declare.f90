@@ -72,6 +72,10 @@ real*8,allocatable :: gamma_d_XY_ao(:,:),gamma_a_XY_ao(:,:)
 real*8,allocatable :: pxKrelaxed(:,:),pxKrelaxedS(:,:),pxrelaxed(:,:)
 real*8,allocatable :: zvec(:,:),zzd_zdz(:,:),zvecxi(:,:)
 real*8,allocatable :: U0(:,:),U0t(:,:),U0tU(:,:)
+!!!Gabriel Breuil 12-04-2019
+real*8,allocatable :: newzzd_zdz(:,:)
+!!!End Gabriel Breuil
+
 
 ! Orbitals
 
@@ -149,4 +153,9 @@ character*128 :: detachmentUbeta,attachmentUbeta,detachmentRbeta,attachmentRbeta
 
 real*8 :: theta_unrelaxed,phiS_unrelaxed,phi_unrelaxed,lambda_dag,theta_z
 real*8 :: phiS_relaxed,phi_relaxed,psi_relaxed,eta
+!!!Gabriel Breuil 12-04-2019
+real*8 :: newphiS_relaxed,newphi_relaxed,newlambda_dag,newpsi_relaxed
+!!!End Gabriel Breuil
+
+
 end

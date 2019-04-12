@@ -13,6 +13,7 @@ use declare
 
 relax = .true.
 
+
 if (unr) then
 
 if (jobtype == 'adiabZ') then
@@ -70,22 +71,15 @@ call common_dar_daz
 
 
 
-!!!Gabriel Breuil 11-04-2019
-!The following if statement is not active yet because for the following
-!calculations, daz & rlxy_LA calculations will be performed.
+!!!Gabriel Breuil 11/12-04-2019
 
-!if (jobtype == 'daz') then
-! continue
-!else
+allocate(newzzd_zdz(norb,norb))
 
-if (subjobtype == 'rlxy_LA') then
-
-
-zzd_zdz=matmul(zvec,zvec)
+newzzd_zdz=matmul(zvec,zvec)
 zcoef=0.0d0
 
 do i=1,norb
- zcoef=zcoef+zzd_zdz(i,i)
+ zcoef=zcoef+newzzd_zdz(i,i)
 enddo
 
 zcoef=0.5d0*zcoef
@@ -97,10 +91,7 @@ write(6,'(f13.5)') zcoef
 write(50,*) 'Integral of relaxation-related to the new LA calculation method'
 write(50,'(f13.5)') zcoef
 
-endif
-
-deallocate(zzd_zdz)
-allocate(zzd_zdz(norb,norb))
+deallocate(newzzd_zdz)
 
 !!! END Gabriel Breuil 11-04-2019
 
